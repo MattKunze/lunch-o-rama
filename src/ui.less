@@ -43,3 +43,20 @@ ul.place-list {
     font-weight: bold;
   }
 }
+
+ul.tag-list {
+  list-style: none;
+  padding: 0;
+
+  > li {
+    margin: .1em;
+    padding: .5em;
+    display: inline-block;
+    background-color: #e5e5e5;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  > li.selected {
+    background-color: #B64926;
+  }
+}

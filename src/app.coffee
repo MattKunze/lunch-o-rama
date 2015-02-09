@@ -2,24 +2,26 @@ UI = React.createFactory require './ui'
 
 
 # app state
-placeList = require './places.json'
+allPlaces = require './places.json'
+filteredPlaces = allPlaces
 isWorking = false;
 selectedPlace = null;
+filterTags = []
 
 pickPlace = ->
   timeout = 1
 
   isWorking = true
-  shuffle placeList
+  shuffle filteredPlaces
 
   iterate = ->
-    placeList.push placeList.shift()
+    filteredPlaces.push filteredPlaces.shift()
     if timeout < 1000
       timeout += timeout * 2;
       _.delay iterate, timeout
     else
       isWorking = false
-      selectedPlace = placeList[0].name
+      selectedPlace = filteredPlaces[0].name
     render()
 
   iterate()
@@ -37,8 +39,41 @@ shuffle = (array) ->
 
   array
 
+addFilterTag = (tag) ->
+  filterTags.push tag
+  applyFilter()
+  render()
+
+removeFilterTag = (tag) ->
+  filterTags = _.without filterTags, tag
+  applyFilter()
+  render()
+
+applyFilter = ->
+  filteredPlaces = if filterTags.length
+    _.filter allPlaces, (test) ->
+      (_.intersection filterTags, test.tags).length
+  else
+    allPlaces
+
 render = ->
-  React.render (UI { placeList, isWorking, selectedPlace, pickPlace }),
+  allTags = (_ allPlaces)
+    .pluck 'tags'
+    .flatten()
+    .uniq()
+    .sort()
+    .value()
+
+  React.render (UI {
+    placeList: filteredPlaces
+    isWorking
+    selectedPlace
+    allTags
+    filterTags
+    pickPlace
+    addFilterTag
+    removeFilterTag
+  }),
     document.querySelector '#app'
 
 render()

@@ -1,13 +1,18 @@
 require('./ui.less');
 
 var PlaceList = require('./placelist');
+var TagList = require('./taglist');
 
 var UI = React.createClass({
   propTypes: {
     placeList: React.PropTypes.array.isRequired,
     selectedPlace: React.PropTypes.string,
     isWorking: React.PropTypes.bool,
-    pickPlace: React.PropTypes.func.isRequired
+    allTags: React.PropTypes.array,
+    filterTags: React.PropTypes.array,
+    pickPlace: React.PropTypes.func.isRequired,
+    addFilterTag: React.PropTypes.func.isRequired,
+    removeFilterTag: React.PropTypes.func.isRequired
   },
   render: function() {
     var firstFive = _(this.props.placeList).pluck('name').take(5).value();
@@ -18,6 +23,11 @@ var UI = React.createClass({
         <PlaceList
           placeNames={firstFive}
           selectedPlace={this.props.selectedPlace} />
+        <TagList
+          allTags={this.props.allTags}
+          filterTags={this.props.filterTags}
+          addFilterTag={this.props.addFilterTag}
+          removeFilterTag={this.props.removeFilterTag} />
         <button onClick={this.props.pickPlace} disabled={this.props.isWorking}>
           Let's Eat!
         </button>
