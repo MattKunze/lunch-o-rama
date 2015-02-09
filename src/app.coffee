@@ -1,5 +1,5 @@
 UI = React.createFactory require './ui'
-
+require './ui.less'
 
 # app state
 allPlaces = require './places.json'

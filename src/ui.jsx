@@ -1,5 +1,3 @@
-require('./ui.less');
-
 var PlaceList = require('./placelist');
 var TagList = require('./taglist');
 
