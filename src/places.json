@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Slyce",
+    "tags": [ "pizza" ]
+  },
+  {
+    "name": "Steakout",
+    "tags": [ "american", "sandwich" ]
+  },
+  {
+    "name": "Snooze",
+    "tags": [ "breakfast" ]
+  },
+  {
+    "name": "Big Als",
+    "tags": [ "takeout", "sandwich" ]
+  },
+  {
+    "name": "Enzio's",
+    "tags": [ "italian" ]
+  },
+  {
+    "name": "Austin's",
+    "tags": [ "american" ]
+  },
+  {
+    "name": "Moe's",
+    "tags": [ "bbq" ]
+  },
+  {
+    "name": "Backcountry Provisions",
+    "tags": [ "sandwich", "takeout" ]
+  },
+  {
+    "name": "Lucky Joe's",
+    "tags": [ "sandwich" ]
+  },
+  {
+    "name": "Jimmy John's",
+    "tags": [ "sandwich" ]
+  },
+  {
+    "name": "Mainline",
+    "tags": [ "american" ]
+  },
+  {
+    "name": "La-Luz",
+    "tags": [ "mexican", "takeout" ]
+  },
+  {
+    "name": "Silver Grill",
+    "tags": [ "breakfast" ]
+  },
+  {
+    "name": "Spoons",
+    "tags": [ "takeout" ]
+  },
+  {
+    "name": "Waffle Lab",
+    "tags": [ "food truck" ]
+  }
+]

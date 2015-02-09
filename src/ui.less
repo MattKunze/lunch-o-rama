@@ -3,6 +3,43 @@ body {
   font-family: 'Segoe UI','Helvetica',sans-serif;
 }
 
-.lunch-o-rama > h1 {
-  margin: .5em;
+.lunch-o-rama {
+
+  > h1 {
+    margin: 0;
+    padding: .5em;
+    background-color: #FFF0A5;
+    color: #8E2800;
+  }
+
+  > button {
+    display: block;
+    margin-top: 1em;
+    width: 100%;
+    background-color: #468966;
+    text-color: #FFF0A5;
+    font-size: 20px;
+  }
+  > button:hover {
+    background-color: lighten(#468966, 5%);
+  }
+  > button:focus {
+    outline: none;
+  }
+}
+
+ul.place-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+
+  > li {
+    padding: 1em;
+    border: 1px solid #ccc;
+  }
+  > li.active {
+    border-left: 10px solid #FFB03B;
+    font-weight: bold;
+  }
 }
