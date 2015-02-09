@@ -18,13 +18,16 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.jsx/, loader: 'jsx-loader' },
-      { test: /\.coffee$/, loader: 'coffee-loader' }
+      { test: /\.coffee$/, loader: 'coffee-loader' },
+      { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.jsx$/, loader: 'jsx-loader' },
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' }
+
     ]
   },
   plugins: [
     new webpack.ProvidePlugin({
-      React: 'react',
+      React: 'react/addons',
       _: 'lodash'
     })
   ]

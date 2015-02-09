@@ -15,11 +15,16 @@
   "devDependencies": {
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.9.0",
+    "css-loader": "^0.9.1",
     "del": "^1.1.1",
     "gulp": "^3.8.10",
     "gulp-load-plugins": "^0.8.0",
     "gulp-util": "^3.0.3",
+    "json-loader": "^0.5.1",
     "jsx-loader": "^0.12.2",
+    "less": "^2.4.0",
+    "less-loader": "^2.0.0",
+    "style-loader": "^0.8.3",
     "webpack": "^1.5.3",
     "webpack-dev-server": "^1.7.0",
     "webpack-reload-plugin": "^0.1.2"

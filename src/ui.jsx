@@ -1,3 +1,5 @@
+require('./ui.less');
+
 var UI = React.createClass({
   render: function() {
     return (
