@@ -30,8 +30,8 @@ Run the development server:
 gulp run
 ```
 
-Now open http://localhost:8080 in a browser and figure out where you're going
-to eat!
+Now open [http://localhost:8080](http://localhost:8080) in a browser and figure
+out where you're going to eat!
 
 The development server supports live reloading using [webpack dev server](http://webpack.github.io/docs/webpack-dev-server.html), so try opening
 the code in a text editor, making changes, and seeing the browser automatically
@@ -43,8 +43,9 @@ The project has a basic unit test framework powered by
 [Mocha](http://mochajs.org). This can be accessed in two ways:
 
 * When the development server is running (`gulp run`) open
-  http://localhost:8080/test.html to run tests directly in the browser. This
-  also supports live reload, so the tests will refresh whenever code is changed.
+  [http://localhost:8080/test.html](http://localhost:8080/test.html) to run tests 
+  directly in the browser. This also supports live reload, so the tests will
+  refresh whenever code is changed.
 * Run `gulp test` on the command line to build the application and run the
   tests.
 
