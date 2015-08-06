@@ -1,7 +1,7 @@
 # Lunch-O-RAMA
 
 Tired of staring at your friends and wandering around aimlessly trying to
-figure out where to eat lunch? *I don't know, where do **you** want to eat?*
+figure out where to eat lunch? *I don't know, where do __you__ want to eat?*
 This project is going to change your life.
 
 Actually, this just represents a simple application that demonstrates how
