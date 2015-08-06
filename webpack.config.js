@@ -21,8 +21,12 @@ module.exports = {
       { test: /\.coffee$/, loader: 'coffee-loader' },
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.jsx$/, loader: 'jsx-loader' },
-      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' }
-
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      {
+        test: /.(eot|gif|jpe?g|png|svg|ttf|woff2?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader'
+      }
     ]
   },
   plugins: [

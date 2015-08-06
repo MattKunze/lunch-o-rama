@@ -42,7 +42,6 @@ module.exports =
             dispatch type: Actions.ADVANCE_SELECTION
             if timeout < 1000
               timeout += timeout * 1.25;
-              console.warn timeout
               _.delay iterate, timeout
             else
               resolve getState().search.filteredPlaces[0]

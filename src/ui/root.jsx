@@ -1,5 +1,6 @@
-require('./root.less');
+require('./material');
 
+var Header = require('./header');
 var PlacesList = require('./placeslist');
 var TagList = require('./taglist');
 
@@ -34,10 +35,9 @@ var Root = React.createClass({
 
     return (
       <div className="lunch-o-rama">
-        <h1>Lunch-O-Rama!</h1>
-        <PlacesList />
+        <Header />
         <TagList />
-        <button onClick={this.props.api.selectPlace}>Let's Eat</button>
+        <PlacesList />
       </div>
     );
   }

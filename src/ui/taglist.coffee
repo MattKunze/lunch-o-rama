@@ -1,6 +1,7 @@
 { connect } = require 'react-redux'
 
-{ ul, li } = React.DOM
+cx = require 'classnames'
+{ div, span, a } = React.DOM
 
 select = (state) ->
   tags: state.places.tags
@@ -13,15 +14,18 @@ TagList = (connect select) React.createClass
     api: React.PropTypes.object.isRequired
 
   render: ->
-    ul className: 'tag-list',
+    div className: 'tag-list',
       for tag in @props.tags
         inSearch = _.contains @props.searchTags, tag
-        li
+        a
           key: tag
+          className: cx 'waves-effect waves-teal',
+            'btn': inSearch
+            'btn-flat': not inSearch
           onClick: if inSearch
             _.bind @context.api.removeSearchTag, null, tag
           else
             _.bind @context.api.addSearchTag, null, tag
-        , "#{if inSearch then '+ ' else ''}#{tag}"
+        , tag
 
 module.exports = TagList

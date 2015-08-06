@@ -1,6 +1,7 @@
-{ Actions } = require '../constants'
+{ Actions, Status } = require '../constants'
 
 initialState = ->
+  status: Status.IDLE
   searchText: ''
   filteredPlaces: []
   searchTags: []
@@ -40,6 +41,7 @@ handlers =
     unless _.contains state.searchTags, payload.tag
       searchTags = state.searchTags.concat payload.tag
 
+      status: Status.IDLE
       searchTags: searchTags
       filteredPlaces: searchPlacesByTags payload.placeInfo, searchTags
 
@@ -48,12 +50,18 @@ handlers =
     if _.contains state.searchTags, payload.tag
       searchTags = _.without state.searchTags, payload.tag
 
+      status: Status.IDLE
       searchTags: searchTags
       filteredPlaces: searchPlacesByTags payload.placeInfo, searchTags
 
   "#{Actions.SELECT_PLACE}": (state, action) ->
     if action.meta?.promise
+      status: Status.SPINNING
       filteredPlaces: shuffle state.filteredPlaces
+    else if action.error
+      status: Status.IDLE
+    else
+      status: Status.SELECTED
 
   "#{Actions.ADVANCE_SELECTION}": (state, action) ->
     filteredPlaces: (_.rest state.filteredPlaces).concat state.filteredPlaces[0]

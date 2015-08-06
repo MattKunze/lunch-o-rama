@@ -6,3 +6,8 @@ module.exports =
     'REMOVE_TAG'
     'SELECT_PLACE'
   }
+  Status: {
+    'IDLE'
+    'SELECTED'
+    'SPINNING'
+  }
