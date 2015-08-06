@@ -26,7 +26,7 @@ gulp.task 'run', [ 'build:static' ], ->
 gulp.task 'build', [ 'build:webpack', 'build:static' ]
 
 gulp.task 'build:static', ->
-  gulp.src 'src/index.html'
+  gulp.src [ 'src/index.html', 'src/places.json' ]
     .pipe gulp.dest 'build'
 
 gulp.task 'build:webpack', (cb) ->

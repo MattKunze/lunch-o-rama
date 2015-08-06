@@ -1,4 +1,10 @@
-UI = React.createFactory require './ui'
+Root = React.createFactory require './ui/root'
+{ bindActionCreators } = require 'redux'
 
-React.render UI(),
+store = require './redux/store'
+actions = require './redux/actions'
+
+api = bindActionCreators actions, store.dispatch
+
+React.render (Root { store, api }),
   document.querySelector '#app'
