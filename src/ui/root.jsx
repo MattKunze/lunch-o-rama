@@ -20,19 +20,16 @@ var Root = React.createClass({
     }
   },
   componentDidMount: function() {
+    // fire API actions to initialize the application - first fetch the list
+    // of place information, then apply an empty search to initially display
+    // all the available places
     var _this = this;
-    this.props.store.subscribe(function() {
-      _this.forceUpdate();
-    });
-
     this.props.api.fetchPlaces()
       .then(function() {
         _this.props.api.applySearch();
       });
   },
   render: function() {
-    var state = this.props.store.getState();
-
     return (
       <div className="lunch-o-rama">
         <Header />

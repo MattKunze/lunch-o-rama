@@ -43,7 +43,7 @@ The project has a basic unit test framework powered by
 [Mocha](http://mochajs.org). This can be accessed in two ways:
 
 * When the development server is running (`gulp run`) open
-  [http://localhost:8080/test.html](http://localhost:8080/test.html) to run tests 
+  [http://localhost:8080/test.html](http://localhost:8080/test.html) to run tests
   directly in the browser. This also supports live reload, so the tests will
   refresh whenever code is changed.
 * Run `gulp test` on the command line to build the application and run the
@@ -77,4 +77,5 @@ Some interesting ideas that could easily be worked on might include:
 * Improve the rotation animation and behavior
 * Mark tags in listed places if they match the current search, and toggle them
   from the search results when clicked
+* Add search input to header to additionally filter the items in the list
 * Add test coverage for place selection action
