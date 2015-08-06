@@ -7,6 +7,15 @@ reducer = combineReducers
   places: placesReducer
   search: searchReducer
 
-middleware = do require './middleware'
+middleware = require './middleware'
 
-module.exports = (middleware createStore) reducer
+loggerMiddleware = ({ dispatch }) ->
+  (next) -> (action) ->
+    details = ''
+    details += '[error]' if action.error
+    details += JSON.stringify action.meta if action.meta
+    console.debug "Dispatching #{action.type}#{details}", action.payload
+    next action
+mw = middleware loggerMiddleware
+
+module.exports = (mw createStore) reducer

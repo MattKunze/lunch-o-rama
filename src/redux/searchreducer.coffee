@@ -68,6 +68,10 @@ handlers =
 
 module.exports = (state = initialState(), action) ->
   if handlers[action.type]
-    _.assign {}, state, handlers[action.type] state, action
+    newState = handlers[action.type] state, action
+    unless _.isEmpty newState
+      _.assign {}, state, newState
+    else
+      state
   else
     state

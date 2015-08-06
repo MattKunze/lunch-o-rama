@@ -3,10 +3,13 @@ var webpack = require('webpack');
 module.exports = {
   cache: true,
   context: __dirname,
-  entry: './src/app',
+  entry: {
+    app: './src/app',
+    test: './src/test'
+  },
   output: {
     path: require('path').resolve('build'),
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   resolve: {
     extensions: [

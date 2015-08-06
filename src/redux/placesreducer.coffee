@@ -21,7 +21,7 @@ handlers =
         .union()
         .sort()
         .value()
-      { placeInfo: action.payload, placesByName, tags }
+      { loading: false, placeInfo: action.payload, placesByName, tags }
 
 module.exports = (state = initialState(), action) ->
   if handlers[action.type]

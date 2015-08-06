@@ -26,14 +26,6 @@ promiseMiddleware = ({ dispatch }) ->
     else
       next action
 
-loggerMiddleware = ({ dispatch }) ->
-  (next) -> (action) ->
-    details = ''
-    details += '[error]' if action.error
-    details += JSON.stringify action.meta if action.meta
-    console.debug "Dispatching #{action.type}#{details}", action.payload
-    next action
-
-module.exports = ->
-  middleware = [ thunk, promiseMiddleware, loggerMiddleware ]
+module.exports = (additionalMiddleWare = []) ->
+  middleware = [ thunk, promiseMiddleware ].concat additionalMiddleWare
   applyMiddleware.apply null, middleware
